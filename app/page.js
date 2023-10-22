@@ -5,6 +5,8 @@ import DropDown from "@/components/DropDown";
 import PageHeader from "@/components/PageHeader";
 import { NavLinksContext } from "@/context/NavLinkContext";
 import Hero from "@/components/Hero";
+import SectionOne from "@/components/SectionOne";
+import SectionTwo from "@/components/SectionTwo";
 
 export default function Home() {
   const [showDropMenu, setShowDropMenu] = useState(false);
@@ -76,6 +78,8 @@ export default function Home() {
         {showDropMenu && <DropDown />}
         <PageHeader />
         <Hero />
+        <SectionOne />
+        <SectionTwo />
       </main>
     </NavLinksContext.Provider>
   );

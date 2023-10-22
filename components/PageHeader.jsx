@@ -17,13 +17,21 @@ const PageHeader = () => {
   const { navLinks, toggleDropMenu } = useContext(NavLinksContext);
 
   return (
-    <nav className="w-full fixed bg-white flex flex-col top-0 items-center lg:flex-row lg:justify-between lg:p-2 lg:px-5">
-      <header className="w-full flex items-center justify-center p-2 border-b lg:w-fit lg:border-none">
+    <nav className="w-full fixed bg-red-500 z-40 flex flex-col top-0 items-center lg:flex-row lg:justify-between lg:p-2 lg:px-5">
+      <header className="w-full flex items-center justify-center border-b lg:w-fit lg:border-none">
         <Image
           width={230}
           height={230}
           alt="school logo"
           src={"/School-Logo-with-name.jpg"}
+          className="lg:hidden"
+        />
+        <Image
+          width={200}
+          height={200}
+          alt="school logo"
+          src={"/School-Logo-with-name.jpg"}
+          className="hidden lg:block"
         />
       </header>
       <div className="w-full flex items-center justify-between p-4 bg-blue-400 lg:w-fit lg:hidden">
@@ -49,7 +57,7 @@ const PageHeader = () => {
             </a>
 
             {navLink.children.length !== 0 && (
-              <div className="hidden w-60  flex-col top-5 -right-5 transition p-3 space-y-2 bg-white rounded-md shadow-md absolute group-hover:flex">
+              <div className="hidden w-60 z-[100] flex-col top-5 -right-5 transition p-3 space-y-2 bg-white rounded-md shadow-md absolute group-hover:flex">
                 {navLink.children.map((child) => (
                   <a
                     className={`font-semibold text-sm  p-2  ${textColors[index]} rounded-md  hover:bg-gray-100`}
