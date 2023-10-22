@@ -1,33 +1,49 @@
+import { delay, motion } from "framer-motion";
 import React, { useContext } from "react";
 import { textColors } from "./PageHeader";
-import NavLinksContext from "@/utils/NavLinkProvider";
+import NavLinksContext from "@/context/NavLinkContext";
 
 const DropDown = () => {
   const { navLinks, toggleSubDropDown } = useContext(NavLinksContext);
 
   return (
-    <nav className="w-5/6 h-screen flex flex-col z-30 p-5 shadow-lg fixed bg-white lg:hidden">
+    <motion.nav
+      initial={{ x: -50 }}
+      animate={{ x: 0 }}
+      className="w-5/6 h-screen flex left-0 flex-col z-30 p-5 shadow-xl fixed bg-gray-100 lg:hidden"
+    >
       {navLinks.map((navLink, index) => (
-        <div key={navLink.text}>
-          <div
+        <div key={navLink.text} className="py-3">
+          <motion.div
+            initial={{ x: -70, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.2 * index }}
             onClick={() => toggleSubDropDown(navLink.text)}
-            className={`font-semibold text-sm p-2 rounded-md hover:bg-gray-100`}
+            className={`font-semibold text-lg p-2 rounded-md border-b hover:bg-gray-200`}
           >
-            <a href="">{navLink.text}</a>
-          </div>
+            {navLink.children.length !== 0 ? (
+              <span>{navLink.text}</span>
+            ) : (
+              <a href="">{navLink.text}</a>
+            )}
+          </motion.div>
           {navLink.children.length !== 0 ? (
             navLink.childIsOpen ? (
-              <div className="flex flex-col px-5">
+              <motion.div
+                initial={{ x: -70, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                className="flex flex-col px-5"
+              >
                 {navLink.children.map((child) => (
                   <a
-                    className={`font-semibold text-sm  p-2  ${textColors[index]} rounded-md  hover:bg-gray-100`}
+                    className={`font-semibold text-md  p-2  ${textColors[index]} rounded-md  hover:bg-gray-200`}
                     key={child.text}
                     href=""
                   >
                     {child.text}
                   </a>
                 ))}
-              </div>
+              </motion.div>
             ) : (
               ""
             )
@@ -36,7 +52,7 @@ const DropDown = () => {
           )}
         </div>
       ))}
-    </nav>
+    </motion.nav>
   );
 };
 
