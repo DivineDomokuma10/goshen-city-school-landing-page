@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useContext } from "react";
-import NavLinksContext from "@/utils/NavLinkProvider";
+import NavLinksContext from "@/context/NavLinkContext";
 
 export const textColors = [
   "text-red-500",
@@ -14,11 +14,10 @@ export const textColors = [
 ];
 
 const PageHeader = () => {
-  const { navLinks, showDropMenu, toggleDropMenu } =
-    useContext(NavLinksContext);
+  const { navLinks, toggleDropMenu } = useContext(NavLinksContext);
 
   return (
-    <nav className="w-full fixed flex flex-col items-center lg:flex-row lg:justify-between lg:p-2 lg:px-5">
+    <nav className="w-full fixed bg-white flex flex-col top-0 items-center lg:flex-row lg:justify-between lg:p-2 lg:px-5">
       <header className="w-full flex items-center justify-center p-2 border-b lg:w-fit lg:border-none">
         <Image
           width={230}

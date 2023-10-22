@@ -3,7 +3,8 @@
 import { useState } from "react";
 import DropDown from "@/components/DropDown";
 import PageHeader from "@/components/PageHeader";
-import { NavLinksContext } from "@/utils/NavLinkProvider";
+import { NavLinksContext } from "@/context/NavLinkContext";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   const [showDropMenu, setShowDropMenu] = useState(false);
@@ -17,7 +18,7 @@ export default function Home() {
     },
     {
       text: "About us",
-      childIsOpen: true,
+      childIsOpen: false,
       hoverColor: "hover:text-yellow-200",
       children: [
         { text: "Welcome to GOSHEN SCHOOLS ENUGU" },
@@ -71,9 +72,10 @@ export default function Home() {
     <NavLinksContext.Provider
       value={{ navLinks, showDropMenu, toggleDropMenu, toggleSubDropDown }}
     >
-      <main className="w-full h-full">
+      <main className="w-full h-full flex flex-col">
         {showDropMenu && <DropDown />}
         <PageHeader />
+        <Hero />
       </main>
     </NavLinksContext.Provider>
   );
