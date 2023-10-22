@@ -1,6 +1,8 @@
 import { delay, motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 import React, { useContext } from "react";
 import { textColors } from "./PageHeader";
+import NavLinksContext from "@/context/NavLinkContext";
 import NavLinksContext from "@/context/NavLinkContext";
 
 const DropDown = () => {
@@ -10,9 +12,19 @@ const DropDown = () => {
     <motion.nav
       initial={{ x: -50 }}
       animate={{ x: 0 }}
+      className="w-5/6 h-screen flex left-0 flex-col z-30 p-5 shadow-xl fixed bg-gray-100 lg:hidden"
+    >
+    <motion.nav
+      initial={{ x: -50 }}
+      animate={{ x: 0 }}
       className="w-5/6 h-screen flex left-0 flex-col z-30 p-3 shadow-xl fixed bg-gray-100 lg:hidden"
     >
       {navLinks.map((navLink, index) => (
+        <div key={navLink.text} className="py-3">
+          <motion.div
+            initial={{ x: -70, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.2 * index }}
         <div key={navLink.text} className="py-2">
           <motion.div
             initial={{ x: -70, opacity: 0 }}
@@ -20,7 +32,14 @@ const DropDown = () => {
             transition={{ duration: 0.2 * index }}
             onClick={() => toggleSubDropDown(navLink.text)}
             className={`font-semibold text-lg p-2 rounded-md border-b hover:bg-gray-200`}
+            className={`font-semibold text-lg p-2 rounded-md border-b hover:bg-gray-200`}
           >
+            {navLink.children.length !== 0 ? (
+              <span>{navLink.text}</span>
+            ) : (
+              <a href="">{navLink.text}</a>
+            )}
+          </motion.div>
             {navLink.children.length !== 0 ? (
               <span>{navLink.text}</span>
             ) : (
@@ -34,8 +53,14 @@ const DropDown = () => {
                 animate={{ x: 0, opacity: 1 }}
                 className="flex flex-col px-5"
               >
+              <motion.div
+                initial={{ x: -70, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                className="flex flex-col px-5"
+              >
                 {navLink.children.map((child) => (
                   <a
+                    className={`font-semibold text-md  p-2  ${textColors[index]} rounded-md  hover:bg-gray-200`}
                     className={`font-semibold text-md border-b p-2 ${textColors[index]} rounded-md hover:bg-gray-200`}
                     key={child.text}
                     href=""
@@ -43,6 +68,7 @@ const DropDown = () => {
                     {child.text}
                   </a>
                 ))}
+              </motion.div>
               </motion.div>
             ) : (
               ""
@@ -52,6 +78,7 @@ const DropDown = () => {
           )}
         </div>
       ))}
+    </motion.nav>
     </motion.nav>
   );
 };
