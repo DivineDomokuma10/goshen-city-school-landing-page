@@ -1,8 +1,5 @@
 import React from "react";
 import { FaEye, FaCar, FaArrowRight } from "react-icons/fa";
-import { Pacifico } from "next/font/google";
-
-const pacifico = Pacifico({ subsets: ["latin"], weight: "400" });
 
 const templateDatas = [
   {

@@ -8,6 +8,8 @@ import Hero from "@/components/Hero";
 import SectionOne from "@/components/SectionOne";
 import SectionTwo from "@/components/SectionTwo";
 import SectionThree from "@/components/SectionThree";
+import SectionFour from "@/components/SectionFour";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [showDropMenu, setShowDropMenu] = useState(false);
@@ -82,6 +84,8 @@ export default function Home() {
         <SectionOne />
         <SectionTwo />
         <SectionThree />
+        <SectionFour />
+        <Footer />
       </main>
     </NavLinksContext.Provider>
   );
