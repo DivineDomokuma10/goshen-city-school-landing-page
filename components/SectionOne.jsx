@@ -31,7 +31,7 @@ foundation for your children’s future and raise them…`,
 
 const SectionOne = () => {
   return (
-    <main className="w-full flex flex-col space-y-9 lg:flex-row lg:space-y-0 lg:py-10 lg:items-center">
+    <main className="w-full flex flex-col text-gray-600 space-y-9 lg:flex-row lg:space-y-0 lg:py-10 lg:items-center">
       {templateDatas.map((data) => (
         <div
           key={data.title}
@@ -40,11 +40,9 @@ const SectionOne = () => {
           <div
             className={`w-fit p-5 rounded-full ${data.bgColor} cursor-pointer transition hover:scale-105 hover:shadow-md`}
           >
-            <data.icon className="text-[85px] text-white lg:text-7xl" />
+            <data.icon className="text-5xl text-white lg:text-7xl" />
           </div>
-          <h2
-            className={`${pacifico.className}  text-3xl py-1 fomnt-bold text-red-500`}
-          >
+          <h2 className={`text-3xl py-1 fomnt-bold text-red-500`}>
             {data.title}
           </h2>
           <p className="text-center px-5 py-1 text-lg font-medium leading-8 md:text-xl md:px-20 lg:text-base lg:px-10">

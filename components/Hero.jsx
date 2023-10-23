@@ -24,7 +24,7 @@ export const sliders = [
 
 const Hero = () => {
   return (
-    <section className="w-full h-[80vh] mt-40 bg-red-300 md:h-[60vh] lg:h-[87vh] lg:mt-[84.2px]"></section>
+    <section className="w-full h-[80vh] mt-36 bg-red-300 md:h-[60vh] lg:h-[87vh] lg:mt-[84.2px]"></section>
   );
 };
 

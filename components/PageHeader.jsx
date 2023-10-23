@@ -17,7 +17,7 @@ const PageHeader = () => {
   const { navLinks, toggleDropMenu } = useContext(NavLinksContext);
 
   return (
-    <nav className="w-full fixed bg-red-500 z-40 flex flex-col top-0 items-center lg:flex-row lg:justify-between lg:p-2 lg:px-5">
+    <nav className="w-full fixed bg-white z-40 flex flex-col top-0 items-center lg:flex-row lg:justify-between lg:p-2 lg:px-5">
       <header className="w-full flex items-center justify-center border-b lg:w-fit lg:border-none">
         <Image
           width={230}
@@ -37,14 +37,14 @@ const PageHeader = () => {
       <div className="w-full flex items-center justify-between p-4 bg-blue-400 lg:w-fit lg:hidden">
         <a
           href="#"
-          className="py-3 px-5 rounded-md text-teal-50 transition bg-blue-500 hover:scale-105"
+          className="py-2 px-4 rounded-md text-teal-50 transition bg-blue-500 hover:scale-105"
         >
           Check your Result
         </a>
 
         <p
           onClick={toggleDropMenu}
-          className="text-xl font-semibold cursor-pointer transition md:text-3xl hover:scale-110"
+          className="text-2xl font-semibold cursor-pointer transition md:text-3xl hover:scale-110"
         >
           &#9776;
         </p>
