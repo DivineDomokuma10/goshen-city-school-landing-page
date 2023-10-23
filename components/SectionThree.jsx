@@ -4,22 +4,19 @@ import SectionThreeCards from "./SectionThreeCards";
 const templateDatas = [
   {
     img: "/Building.jpg",
-    bgColor: "bg-yellow-300",
-    textColor: "text-yellow-300",
+    bgColor: "bg-yellow-500",
     title: "Conducive Environment",
     text: `At Goshen City Schools, we provide our children with adequate learning materials in spacious classrooms and the engagement of well…`,
   },
   {
     img: "/computer-room.jpg",
     bgColor: "bg-red-500",
-    textColor: "text-red-500",
     title: "Blended Curriculum",
     text: `At Goshen City Schools, our curriculum is a blend of the Nigerian National Basic Education curriculum and that of schools…`,
   },
   {
     img: "/Lab1.jpg",
-    bgColor: "bg-orange-300",
-    textColor: "text-orange-300",
+    bgColor: "bg-orange-500",
     title: "Standard facilities",
     text: `It is important to understand that science and technology cannot be over-emphasized, hence we have made sure that our science…`,
   },

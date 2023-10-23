@@ -1,9 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { Pacifico } from "next/font/google";
 import React from "react";
-
-const pacifico = Pacifico({ subsets: ["latin"], weight: "400" });
 
 const SectionTwo = () => {
   return (
