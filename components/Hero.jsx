@@ -4,27 +4,6 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
-export const sliders = [
-  {
-    image: "/Building.jpg",
-    bg: "bg-[url(/Building.jpg)]",
-    title: "Conducive Environment",
-    text: `At Goshen City Schools, we provide our children with adequate learning materials in spacious classrooms and the engagement of well…`,
-  },
-  {
-    image: "/computer-room.jpg",
-    title: "Blended Curriculum",
-    bg: "bg-[url(/computer-room.jpg)]",
-    text: `At Goshen City Schools, our curriculum is a blend of the Nigerian National Basic Education curriculum and that of schools…`,
-  },
-  {
-    image: "/Lab1.jpg",
-    bg: "bg-[url(/Lab1.jpg)]",
-    title: "Standard facilities",
-    text: `It is important to understand that science and technology cannot be over-emphasized, hence we have made sure that our science…`,
-  },
-];
-
 const Hero = () => {
   const [schoolText, setShoolText] = useState("");
   const placeHolder = "To Goshen City School.";
@@ -58,7 +37,7 @@ const Hero = () => {
   useEffect(() => writeText(), []);
 
   return (
-    <main className="w-full h-[82vh] bg-[url(/Building.jpg)] bg-center mt-36 bg-red-300 md:h-[60vh] lg:h-[87vh] lg:mt-[84.2px]">
+    <main className="w-full h-[90vh] bg-[url(/Building.jpg)] bg-center mt-[81px] md:h-[60vh] lg:h-[87vh] lg:mt-[79.5px]">
       <section className="w-full h-full flex flex-col space-y-10 items-center justify-center bg-black bg-opacity-80 backdrop-blur backdrop-filter">
         <motion.div
           initial={{ opacity: 0 }}

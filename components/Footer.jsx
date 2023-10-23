@@ -40,13 +40,12 @@ const Footer = () => {
         </div>
       </div>
 
-      <a className="text-xs text-center">
+      <p className="text-xs text-center">
         Copyright © All rights reserved.{" "}
         <a href="" className="text-pink-700">
-          Website and Portal by Wizzyhub Technology Ltd (Digital School Software
+          Website and Portal by AppHearts Ltd
         </a>
-        )
-      </a>
+      </p>
     </footer>
   );
 };

@@ -1,8 +1,10 @@
 "use client";
 
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
+
 import React, { useContext } from "react";
 import NavLinksContext from "@/context/NavLinkContext";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export const textColors = [
   "text-red-500",
@@ -14,42 +16,18 @@ export const textColors = [
 ];
 
 const PageHeader = () => {
-  const { navLinks, toggleDropMenu } = useContext(NavLinksContext);
+  const { navLinks, toggleDropMenu, showDropMenu } =
+    useContext(NavLinksContext);
 
   return (
-    <nav className="w-full fixed bg-white z-40 flex flex-col top-0 items-center lg:flex-row lg:justify-between lg:p-2 lg:px-5">
-      <header className="w-full flex items-center justify-center border-b lg:w-fit lg:border-none">
-        <Image
-          width={230}
-          height={230}
-          alt="school logo"
-          src={"/School-Logo-with-name.jpg"}
-          className="lg:hidden"
-        />
-        <Image
-          width={200}
-          height={200}
-          alt="school logo"
-          src={"/School-Logo-with-name.jpg"}
-          className="hidden lg:block"
-        />
-      </header>
-      <div className="w-full flex items-center justify-between p-4 bg-blue-400 lg:w-fit lg:hidden">
-        <a
-          href="#"
-          className="py-2 px-4 rounded-md text-teal-50 transition bg-blue-500 hover:scale-105"
-        >
-          Check your Result
-        </a>
+    <nav className="w-full fixed p-3 z-40 flex top-0 items-center bg-white justify-between lg:px-7">
+      <img
+        alt="school logo"
+        src="/School-Logo-with-name.jpg"
+        className="w-48 h-14"
+      />
 
-        <p
-          onClick={toggleDropMenu}
-          className="text-2xl font-semibold cursor-pointer transition md:text-3xl hover:scale-110"
-        >
-          &#9776;
-        </p>
-      </div>
-      <div className="hidden w-fit h-full transition items-center pt-2 pr-10 space-x-8 lg:flex">
+      <div className="hidden w-fit h-full transition items-center pt-2 space-x-8 lg:flex">
         {navLinks.map((navLink, index) => (
           <div key={navLink.text} className="group flex flex-col relative">
             <a href="" className={`font-semibold text-sm text-black`}>
@@ -72,6 +50,19 @@ const PageHeader = () => {
           </div>
         ))}
       </div>
+      <>
+        {showDropMenu ? (
+          <FaTimes
+            onClick={toggleDropMenu}
+            className="text-2xl font-semibold cursor-pointer transition md:text-3xl lg:hidden hover:scale-110"
+          />
+        ) : (
+          <FaBars
+            onClick={toggleDropMenu}
+            className="text-2xl font-semibold cursor-pointer transition md:text-3xl lg:hidden hover:scale-110"
+          />
+        )}
+      </>
     </nav>
   );
 };
