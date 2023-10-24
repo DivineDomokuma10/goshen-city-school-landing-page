@@ -64,7 +64,11 @@ export default function Home() {
     },
   ]);
 
-  const toggleDropMenu = () => setShowDropMenu(!showDropMenu);
+  const toggleDropMenu = () => {
+    setShowDropMenu(!showDropMenu);
+    setNavLinks( prev => prev.map((navLink) => ({ ...navLink, childIsOpen: false})))
+    
+  }
 
   const toggleSubDropDown = (text) => {
     const newValue = navLinks.map((navLink) => {
