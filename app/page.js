@@ -26,9 +26,9 @@ export default function Home() {
       childIsOpen: false,
       hoverColor: "hover:text-yellow-200",
       children: [
-        { text: "Welcome to GOSHEN SCHOOLS ENUGU" },
-        { text: "From the Principal's Desk" },
-        { text: "From the Dean of Studies Desk" },
+        { text: "Welcome to GOSHEN SCHOOLS ENUGU", path: "" },
+        { text: "From the Principal's Desk", path: "" },
+        { text: "From the Dean of Studies Desk", path: "" },
       ],
     },
     {
@@ -57,7 +57,10 @@ export default function Home() {
       text: "Login",
       childIsOpen: false,
       hoverColor: "hover:text-pink-400",
-      children: [{ text: "Staff Login" }, { text: "Student Login" }],
+      children: [
+        { text: "Staff Login", path: "https://Goshen-portal.vercel.app" },
+        { text: "Student Login", path: "https://Goshen-portal.vercel.app" },
+      ],
     },
   ]);
 

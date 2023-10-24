@@ -45,7 +45,7 @@ const DropDown = () => {
                     <a
                       className={`font-semibold text-sm border-b p-2 ${textColors[index]} rounded-md hover:bg-gray-200`}
                       key={child.text}
-                      href=""
+                      href={child.path}
                     >
                       {child.text}
                     </a>

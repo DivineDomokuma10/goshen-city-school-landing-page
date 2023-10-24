@@ -40,7 +40,7 @@ const PageHeader = () => {
                   <a
                     className={`font-semibold text-sm  p-2  ${textColors[index]} rounded-md  hover:bg-gray-100`}
                     key={child.text}
-                    href=""
+                    href={child.path}
                   >
                     {child.text}
                   </a>
