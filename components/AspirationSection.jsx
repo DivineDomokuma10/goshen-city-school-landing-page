@@ -26,7 +26,7 @@ foundation for your children’s future and raise them…`,
   },
 ];
 
-const SectionOne = () => {
+const AspirationSection = () => {
   return (
     <main className="w-full flex flex-col text-gray-600 space-y-9 lg:flex-row lg:space-y-0 lg:py-10 lg:items-center">
       {templateDatas.map((data) => (
@@ -51,4 +51,4 @@ const SectionOne = () => {
   );
 };
 
-export default SectionOne;
+export default AspirationSection;

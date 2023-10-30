@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useContext } from "react";
-import { textColors } from "./PageHeader";
+import { textColors } from "./NavSection";
 import NavLinksContext from "@/context/NavLinkContext";
 
 const DropDown = () => {
@@ -13,27 +13,37 @@ const DropDown = () => {
       className="w-5/6 h-screen flex left-0 flex-col z-50 p-5 shadow-xl fixed bg-gray-100 lg:hidden"
     >
       {navLinks.map((navLink, index) => (
-        <div key={navLink.text} className="py-1">
+        <div key={navLink.text} className="w-full py-1">
           <motion.div
             initial={{ x: -70, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.2 * index }}
             key={navLink.text}
-            className="py-2"
+            className="w-full py-2"
           >
-            <motion.div
-              initial={{ x: -70, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.2 * index }}
-              onClick={() => toggleSubDropDown(navLink.text)}
-              className={`font-semibold p-2 rounded-md border-b hover:bg-gray-200`}
-            >
-              {navLink.children.length !== 0 ? (
-                <span>{navLink.text}</span>
-              ) : (
-                <a href="">{navLink.text}</a>
-              )}
-            </motion.div>
+            {navLink.children.length !== 0 ? (
+              <motion.span
+                initial={{ x: -70, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.2 * index }}
+                onClick={() => toggleSubDropDown(navLink.text)}
+                className={`w-full font-semibold p-2 rounded-md border-b hover:bg-gray-200`}
+              >
+                {navLink.text}
+              </motion.span>
+            ) : (
+              <motion.a
+                initial={{ x: -70, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.2 * index }}
+                onClick={() => toggleSubDropDown(navLink.text)}
+                className={`w-full font-semibold p-2 rounded-md border-b hover:bg-gray-200`}
+                href={navLink.path}
+              >
+                {navLink.text}
+              </motion.a>
+            )}
+
             {navLink.children.length !== 0 ? (
               navLink.childIsOpen ? (
                 <motion.div

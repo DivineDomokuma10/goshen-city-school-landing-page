@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import DropDown from "@/components/DropDown";
-import PageHeader from "@/components/PageHeader";
+import PageHeader from "@/components/NavSection";
 import { NavLinksContext } from "@/context/NavLinkContext";
 import Hero from "@/components/Hero";
-import SectionOne from "@/components/SectionOne";
+import SectionOne from "@/components/AspirationSection";
 import SectionTwo from "@/components/SectionTwo";
 import SectionThree from "@/components/SectionThree";
 import SectionFour from "@/components/SectionFour";
@@ -57,14 +57,17 @@ export default function Home() {
       text: "Login",
       childIsOpen: false,
       hoverColor: "hover:text-pink-400",
-      children: [
-        { text: "Staff Login", path: "https://Goshen-portal.vercel.app" },
-        { text: "Student Login", path: "https://Goshen-portal.vercel.app" },
-      ],
+      path: "https://Goshen-portal.vercel.app",
+      children: [],
     },
   ]);
 
-  const toggleDropMenu = () => setShowDropMenu(!showDropMenu);
+  const toggleDropMenu = () => {
+    setShowDropMenu(!showDropMenu);
+    setNavLinks((prev) =>
+      prev.map((navLink) => ({ ...navLink, childIsOpen: false }))
+    );
+  };
 
   const toggleSubDropDown = (text) => {
     const newValue = navLinks.map((navLink) => {

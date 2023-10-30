@@ -15,7 +15,7 @@ export const textColors = [
   "text-pink-500",
 ];
 
-const PageHeader = () => {
+const NavSection = () => {
   const { navLinks, toggleDropMenu, showDropMenu } =
     useContext(NavLinksContext);
 
@@ -67,4 +67,4 @@ const PageHeader = () => {
   );
 };
 
-export default PageHeader;
+export default NavSection;
