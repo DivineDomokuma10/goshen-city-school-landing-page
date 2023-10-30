@@ -6,9 +6,9 @@ import PageHeader from "@/components/NavSection";
 import { NavLinksContext } from "@/context/NavLinkContext";
 import Hero from "@/components/Hero";
 import SectionOne from "@/components/AspirationSection";
-import SectionTwo from "@/components/SectionTwo";
-import SectionThree from "@/components/SectionThree";
-import SectionFour from "@/components/SectionFour";
+import ProperitorSection from "@/components/ProperitorSection";
+import AboutSection from "@/components/AboutSection";
+import NewsSection from "@/components/NewsSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -64,6 +64,7 @@ export default function Home() {
 
   const toggleDropMenu = () => {
     setShowDropMenu(!showDropMenu);
+
     setNavLinks((prev) =>
       prev.map((navLink) => ({ ...navLink, childIsOpen: false }))
     );
@@ -88,9 +89,9 @@ export default function Home() {
         <PageHeader />
         <Hero />
         <SectionOne />
-        <SectionTwo />
-        <SectionThree />
-        <SectionFour />
+        <ProperitorSection />
+        <AboutSection />
+        <NewsSection />
         <Footer />
       </main>
     </NavLinksContext.Provider>

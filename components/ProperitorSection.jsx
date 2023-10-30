@@ -2,7 +2,7 @@
 
 import React from "react";
 
-const SectionTwo = () => {
+const ProperitorSection = () => {
   return (
     <section className="transition w-full py-12 flex flex-col space-y-24 items-center bg-gray-50 lg:h-[70vh] lg:flex-row lg:space-y-0 lg:space-x-10 lg:px-12 ">
       <div className=" w-full overflow-hidden flex justify-center p-2 lg:w-[30%] lg:border-4 lg:border-blue-400 lg:rounded-md">
@@ -28,4 +28,4 @@ const SectionTwo = () => {
   );
 };
 
-export default SectionTwo;
+export default ProperitorSection;

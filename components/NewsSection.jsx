@@ -1,9 +1,9 @@
 import React from "react";
 import Card from "./Card";
 
-import { templateDatas } from "./SectionThree";
+import { templateDatas } from "./AboutSection";
 
-const SectionFour = () => {
+const NewsSection = () => {
   return (
     <section className="w-full flex flex-col bg-gray-50 justify-center space-y-16 py-14 lg:items-center">
       <h1 className="text-gray-500 text-center  text-2xl font-bold lg:text-3xl">
@@ -24,4 +24,4 @@ const SectionFour = () => {
   );
 };
 
-export default SectionFour;
+export default NewsSection;

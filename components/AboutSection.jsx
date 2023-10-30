@@ -29,7 +29,7 @@ export const templateDatas = [
   },
 ];
 
-const SectionThree = () => {
+const AboutSection = () => {
   return (
     <section className="w-full flex flex-col justify-center space-y-16 py-16 lg:items-center">
       <h1 className="text-gray-500 text-center text-2xl font-bold lg:text-3xl">
@@ -50,4 +50,4 @@ const SectionThree = () => {
   );
 };
 
-export default SectionThree;
+export default AboutSection;
