@@ -1,72 +1,47 @@
 "use client";
-"use client";
-/* eslint-disable @next/next/no-img-element */
+
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import { FaStar } from "react-icons/fa";
 
 const Hero = () => {
-  const [schoolText, setShoolText] = useState("");
-  const placeHolder = "To Goshen City School.";
-
-  const writeText = () => {
-    let currentIndex = 0;
-    const interval = setInterval(() => {
-      if (currentIndex === placeHolder.length) {
-        clearInterval(interval);
-        setTimeout(deleteText, 100);
-      } else {
-        setShoolText(placeHolder.slice(0, currentIndex + 1));
-        currentIndex++;
-      }
-    }, 300);
-  };
-
-  const deleteText = () => {
-    let currentIndex = placeHolder.length;
-    const interval = setInterval(() => {
-      if (currentIndex === 0) {
-        clearInterval(interval);
-        writeText();
-      } else {
-        setShoolText(placeHolder.slice(0, currentIndex - 1));
-        currentIndex--;
-      }
-    }, 300);
-  };
-
-  useEffect(() => writeText(), []);
-
   return (
-    <main className="w-full h-[90vh] bg-[url(/Building.jpg)] bg-center mt-[81px] md:h-[60vh] lg:h-[87vh] lg:mt-[79.5px]">
-      <section className="w-full h-full flex flex-col space-y-10 items-center justify-center bg-black bg-opacity-80 backdrop-blur backdrop-filter">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col space-y-5 text-center"
-        >
-          <h1 className={`text-3xl font-bold text-gray-100 md:text-6xl lg:8xl`}>
-            Welcome
-          </h1>
-          <p className="text-lg text-white md:text-xl">{schoolText}</p>
-        </motion.div>
+    <main className="w-full h-screen flex flex-col space-y-7 items-center justify-center bg-slate-950 lg:items-start lg:px-20 lg:space-y-10">
+      <h1 className="text-[33px] font-bold text-gray-200 md:text-4xl lg:text-5xl">
+        Goshen City School
+      </h1>
+      <p className="text-center text-gray-300 px-5 md:text-xl md:px-8 lg:text-start lg:px-0 lg:w-2/3">
+        At Goshen City Schools, we provide our children with adquate learning
+        materils in spacious classrooms and the engagement of well tranined and
+        highly motivated teachers and teachng...
+      </p>
 
-        <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col items-center space-y-5"
+      <p className="flex items-center text-gray-300 text-sm space-x-3">
+        <span>1</span>
+        <span className="flex items-center text-gray-300 space-x-1">
+          <FaStar className="text-yellow-400" />
+          <FaStar />
+          <FaStar />
+          <FaStar />
+          <FaStar />
+        </span>
+        <span>(3 verifed ratings)</span>
+      </p>
+
+      <div className="flex space-x-7 items-center">
+        <button className="bg-blue-800 px-7 rounded-md transition py-3 text-gray-400 font-semibold hover:scale-105">
+          Apply For Admisson
+        </button>
+        <button className="hidden bg-gray-200 px-7 rounded-md transition py-3 text-blue-500 font-semibold hover:scale-105 md:block">
+          Make Enquiry
+        </button>
+        <a
+          href=""
+          className="hidden text-white border-b-2 border-b-white md:block"
         >
-          <p className="text-gray-300 font-bold px-5 text-sm text-center leading-7 md:text-base md:px-16 lg:px-60">
-            Thank you for choosing Goshen City Schools, The best choice for your
-            child. We wish to assure you that you have made the right choice.The
-            School is the school for the child you love.
-          </p>
-          <button className="w-fit px-4 py-1 font-medium bg-blue-400 text-white text-lg rounded transition hover:scale-105">
-            Join Us
-          </button>
-        </motion.div>
-      </section>
+          Access Tuition Finance
+        </a>
+      </div>
     </main>
   );
 };
